@@ -21,6 +21,17 @@ Testing is performed throughout all development stages. It is performed using un
 
 ⚠️ This is an evolving engineering project developed in multiple stages.
 
+## 📈 Development Progress
+
+| Stage | Status |
+|------|--------|
+| Stage 1 — Functional Prototype | 🚧 In Progress |
+| Stage 2 — Portable Device | ⏳ Planned |
+| Stage 2.5 — Bootloader | ⏳ Planned |
+| Stage 3 — Custom PCB | ⏳ Planned |
+| Stage 4 — IoT Integration | ⏳ Planned |
+
+
 ---
 
 ## ⚙️ Hardware
