@@ -77,6 +77,27 @@ Engineering Focus:
 
 ---
 
+### 🔄 Stage 2.5 — Bootloader & Firmware Infrastructure
+
+Goal: Prepare the firmware architecture for safe updates and future product evolution before hardware redesign.
+
+Features:
+
+- Dedicated bootloader implementation
+- Flash memory partitioning (bootloader / application)
+- Firmware update via UART (initial)
+- Application image validation
+- Recovery mechanism for failed updates
+
+Engineering Focus:
+
+- Reliable firmware deployment workflow
+- Memory layout planning before PCB design
+- Separation of bootloader and application builds
+- Preparation for future OTA updates (Stage 4)
+
+---
+
 ###   🧩 Stage 3 — Custom Hardware (PCB + Smaller STM32)
 
 Goal: Convert prototype into a compact embedded product.
@@ -102,7 +123,7 @@ Engineering Focus:
 
 Goal: Extend the finished device into a connected environmental monitoring node.
 
-Planned Features:
+Features:
 
 - Communication module (BLE / Wi-Fi / Cellular — TBD)
 - Data serialization and communication protocol
