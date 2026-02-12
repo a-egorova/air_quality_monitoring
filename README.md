@@ -75,8 +75,6 @@ Engineering Focus:
 - Timestamped measurements
 - Power consumption analysis
 
----
-
 ### 🔄 Stage 2.5 — Bootloader & Firmware Infrastructure
 
 Goal: Prepare the firmware architecture for safe updates and future product evolution before hardware redesign.
@@ -96,8 +94,6 @@ Engineering Focus:
 - Separation of bootloader and application builds
 - Preparation for future OTA updates (Stage 4)
 
----
-
 ###   🧩 Stage 3 — Custom Hardware (PCB + Smaller STM32)
 
 Goal: Convert prototype into a compact embedded product.
@@ -116,8 +112,6 @@ Engineering Focus:
 - Production-oriented firmware
 - Debug interface planning
 - Mechanical and layout considerations
-
----
 
 ###   🌐 Stage 4 — IoT Integration (Future Expansion)
 
