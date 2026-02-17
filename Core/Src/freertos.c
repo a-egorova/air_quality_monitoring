@@ -25,7 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "log_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -114,11 +114,15 @@ void MX_FREERTOS_Init(void) {
 void MainAppTask(void *argument)
 {
   /* USER CODE BEGIN MainAppTask */
+  INFO_LOG("System initialized");
+  WARN_LOG("Battery low: %d%%", 75);
+
   /* Infinite loop */
   for(;;)
   {
+    TRACE_LOG("Loop running");
     HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);
-    osDelay(500);
+    osDelay(1000);
   }
   /* USER CODE END MainAppTask */
 }
