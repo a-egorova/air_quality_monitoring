@@ -1,13 +1,13 @@
 /**
- * @file log_task.h
+ * @file logging.h
  * @brief Modular logging service for STM32 + FreeRTOS
  * @date 2026-02-17
  * 
  * @copyright Copyright (c) 2026
  * 
  */
-#ifndef LOG_TASK_H
-#define LOG_TASK_H
+#ifndef LOGGING_H
+#define LOGGING_H
 
 /*******************************
  * INCLUDES
@@ -36,11 +36,20 @@ typedef enum {
  * FUNCTION DECLARATIONS
  *******************************/
 
-// Initialize the log service with the given UART handle
+/**
+ * @brief Initialize the log service with the given UART handle
+ * 
+ * @param uart UART handle
+ */
 void log_init(UART_HandleTypeDef *uart);
 
-// Logging function
-// By default non-blocking (drops message if queue full)
+/**
+ * @brief Logging function; non-blocking (drops message if queue full)
+ * 
+ * @param level 
+ * @param fmt 
+ * @param ... 
+ */
 void log_print(log_level_t level, const char *fmt, ...);
 
 /*******************************
@@ -52,4 +61,4 @@ void log_print(log_level_t level, const char *fmt, ...);
 #define ERROR_LOG(...)   log_print(LOG_LEVEL_ERROR, __VA_ARGS__)
 #define TRACE_LOG(...)   log_print(LOG_LEVEL_TRACE, __VA_ARGS__)
 
-#endif // LOG_TASK_H
+#endif // LOGGING_H

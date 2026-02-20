@@ -48,13 +48,15 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
-    ${CMAKE_CURRENT_SOURCE_DIR}/Core/Src/tasks/log_task.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Src/app_main.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Services/Src/logging.c
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
-    ${CMAKE_CURRENT_SOURCE_DIR}/Core/Inc/tasks
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Inc
+    ${CMAKE_CURRENT_SOURCE_DIR}/Services/Inc
 )
 
 # Add project symbols (macros)

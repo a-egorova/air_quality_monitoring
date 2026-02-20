@@ -25,7 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "log_task.h"
+#include "app_main.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,10 +47,10 @@
 /* USER CODE BEGIN Variables */
 
 /* USER CODE END Variables */
-/* Definitions for MainApp */
-osThreadId_t MainAppHandle;
-const osThreadAttr_t MainApp_attributes = {
-  .name = "MainApp",
+/* Definitions for StartDefault */
+osThreadId_t StartDefaultHandle;
+const osThreadAttr_t StartDefault_attributes = {
+  .name = "StartDefault",
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
@@ -60,7 +60,7 @@ const osThreadAttr_t MainApp_attributes = {
 
 /* USER CODE END FunctionPrototypes */
 
-void MainAppTask(void *argument);
+void StartDefaultTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -71,7 +71,7 @@ void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-
+  app_main_init();
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -91,8 +91,8 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* creation of MainApp */
-  MainAppHandle = osThreadNew(MainAppTask, NULL, &MainApp_attributes);
+  /* creation of StartDefault */
+  // StartDefaultHandle = osThreadNew(StartDefaultTask, NULL, &StartDefault_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -104,28 +104,23 @@ void MX_FREERTOS_Init(void) {
 
 }
 
-/* USER CODE BEGIN Header_MainAppTask */
+/* USER CODE BEGIN Header_StartDefaultTask */
 /**
-  * @brief  Function implementing the MainApp thread.
+  * @brief  Function implementing the StartDefault thread.
   * @param  argument: Not used
   * @retval None
   */
-/* USER CODE END Header_MainAppTask */
-void MainAppTask(void *argument)
-{
-  /* USER CODE BEGIN MainAppTask */
-  INFO_LOG("System initialized");
-  WARN_LOG("Battery low: %d%%", 75);
-
-  /* Infinite loop */
-  for(;;)
-  {
-    TRACE_LOG("Loop running");
-    HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);
-    osDelay(1000);
-  }
-  /* USER CODE END MainAppTask */
-}
+/* USER CODE END Header_StartDefaultTask */
+// void StartDefaultTask(void *argument)
+// {
+//   /* USER CODE BEGIN StartDefaultTask */
+//   /* Infinite loop */
+//   for(;;)
+//   {
+//     osDelay(1);
+//   }
+//   /* USER CODE END StartDefaultTask */
+// }
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */

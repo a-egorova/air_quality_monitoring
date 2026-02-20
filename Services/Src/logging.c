@@ -1,5 +1,5 @@
 /**
- * @file log_task.c
+ * @file logging.c
  * @brief Modular logging service for STM32 + FreeRTOS
  * @date 2026-02-17
  * 
@@ -11,7 +11,7 @@
  * INCLUDES
  *******************************/
 
-#include "log_task.h"
+#include "logging.h"
 #include "stm32f7xx_hal.h"  // For HAL_UART_Transmit
 #include <stdarg.h>
 #include <stdbool.h>
@@ -44,7 +44,11 @@ static StackType_t logTaskStack[LOG_TASK_STACK_SIZE];
  * STATIC FUNCTIONS
  *******************************/
 
-// Log task dequeues messages and sends via UART
+/**
+ * @brief Log task dequeues messages and sends via UART
+ * 
+ * @param params Not used.
+ */
 static void LogTask(void *params)
 {
     log_message_t logMsg;
