@@ -48,15 +48,19 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
-    ${CMAKE_CURRENT_SOURCE_DIR}/App/Src/app_main.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/Services/Src/logging.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/app_main.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Services/logging.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Platform/comm_interface.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Platform/i2c_comm.c
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
-    ${CMAKE_CURRENT_SOURCE_DIR}/App/Inc
-    ${CMAKE_CURRENT_SOURCE_DIR}/Services/Inc
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Configs/
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Services/
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Platform/
 )
 
 # Add project symbols (macros)
@@ -73,3 +77,5 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 
     # Add user defined libraries
 )
+
+target_link_options(${CMAKE_PROJECT_NAME} PRIVATE -u _printf_float)

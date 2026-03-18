@@ -17,10 +17,17 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
+#include "tasks_config.h"
+#include "system_config.h"
+
+// TODO: - change naming
+//       - add color support
+//       - add timestamp
+//       - show logs based on permitted log level - like WARN and ERROR but not INFO or DEBUG; >= TRACE 
 
 
 /*******************************
- * STATIC VARIABLES
+ * LOCAL VARIABLES
  *******************************/
 
 typedef struct {
@@ -104,7 +111,7 @@ void log_init(UART_HandleTypeDef *uart)
         "LogTask",
         LOG_TASK_STACK_SIZE,
         NULL,
-        tskIDLE_PRIORITY + 1,
+        LOG_TASK_PRIORITY,
         logTaskStack,
         &logTaskTCB
     );

@@ -21,10 +21,6 @@
  * DEFINES, ENUMS
  *******************************/
 
-#define LOG_MSG_LEN 128
-#define LOG_QUEUE_LEN 16
-#define LOG_TASK_STACK_SIZE 256   // 1 KB
-
 typedef enum {
     LOG_LEVEL_INFO,
     LOG_LEVEL_WARN,
