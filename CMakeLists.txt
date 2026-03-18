@@ -50,8 +50,10 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
     ${CMAKE_CURRENT_SOURCE_DIR}/App/app_main.c
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Services/logging.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Services/env_sensor_task.c
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Platform/comm_interface.c
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Platform/i2c_comm.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Drivers/bme280/bme280.c
 )
 
 # Add include paths
@@ -61,6 +63,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Configs/
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Services/
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Platform/
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Drivers/bme280/
 )
 
 # Add project symbols (macros)

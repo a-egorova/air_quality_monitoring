@@ -23,7 +23,7 @@
 
 #include "app_main.h"
 #include "logging.h"
-// #include "env_sensor_task.h"
+#include "env_sensor_task.h"
 #include "tasks_config.h"
 
 
@@ -54,7 +54,7 @@ static void AppMainTask(void *pvParameters)
     /* -------- Application initialization -------- */
     
     log_init(&huart3);
-    // env_sensor_task_init(&hi2c1);
+    env_sensor_task_init(&hi2c1);
 
     /* ---- Start services ---- */
 
