@@ -24,6 +24,7 @@
 #include "app_main.h"
 #include "logging.h"
 #include "env_sensor_task.h"
+#include "ssd1306.h"
 #include "tasks_config.h"
 
 
@@ -55,6 +56,7 @@ static void AppMainTask(void *pvParameters)
     
     log_init(&huart3);
     env_sensor_task_init(&hi2c1);
+    ssd1306_init();
 
     /* ---- Start services ---- */
 
@@ -68,6 +70,12 @@ static void AppMainTask(void *pvParameters)
         TRACE_LOG("Loop running");
         HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);
         osDelay(pdMS_TO_TICKS(APP_MAIN_TASK_PERIOD_MS));
+
+        ssd1306_display_on();
+        HAL_Delay(2000);
+
+        ssd1306_display_off();
+        HAL_Delay(2000);
     }
 }
 

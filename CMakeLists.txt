@@ -54,6 +54,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Platform/comm_interface.c
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Platform/i2c_comm.c
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Drivers/bme280/bme280.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Drivers/ssd1306.c
 )
 
 # Add include paths
@@ -64,6 +65,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Services/
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Platform/
     ${CMAKE_CURRENT_SOURCE_DIR}/App/Drivers/bme280/
+    ${CMAKE_CURRENT_SOURCE_DIR}/App/Drivers/
 )
 
 # Add project symbols (macros)
